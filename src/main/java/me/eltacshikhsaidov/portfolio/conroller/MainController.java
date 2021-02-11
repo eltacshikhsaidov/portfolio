@@ -7,16 +7,16 @@ import org.springframework.ui.Model;
 @Controller
 public class MainController {
     
-    private static final int count = 0;
     
-//     public static syncronized int count() {
-//         count ++;
-//         return count;
-//     }
+    public static syncronized int count() {
+        int count = 0;
+        count ++;
+        return count;
+    }
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("count", count ++);
+        model.addAttribute("count", count());
         return "index";
     }
 
