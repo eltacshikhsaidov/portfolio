@@ -9,7 +9,7 @@ public class MainController {
     
     private static final int count = 0;
     
-    public syncronized int count() {
+    public static syncronized int count() {
         count ++;
         return count;
     }
