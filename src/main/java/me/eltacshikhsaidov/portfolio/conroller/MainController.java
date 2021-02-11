@@ -2,12 +2,21 @@ package me.eltacshikhsaidov.portfolio.conroller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
 
 @Controller
 public class MainController {
+    
+    private static final int count = 0;
+    
+    public syncronized int count() {
+        count ++;
+        return count;
+    }
 
     @GetMapping("/")
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("count", count());
         return "index";
     }
 
